@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Fabulous Workplace Blogs | Insights on Workplace Excellence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section MetaTags {
+
+    <meta name="description" content="Explore the Fabulous Workplace blog for expert insights, tips, and trends on workplace culture, employee engagement, and organizational success.">
+    <meta name="keywords" content="workplace blogs,employee engagement tips,workplace culture insights,organizational success blogs,Fabulous Workplace articles,workplace trends,employee experience blogs">
+    <link rel="canonical" href="http://fabulousworkplace.in/Best-workplace-Blogs" />
+
+}
+<!--==================================================-->
+<!-- Start roadly Breadcumb Area -->
+<!--==================================================-->
+<div class="breadcumb-area d-flex style_two">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="breadcumb-content">
+                    <div class="breadcumb-title">
+                        <h4>Blog Post</h4>
+                    </div>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Index")">Home <span>/</span></a></li>
+                        <li class="breadcumb-intext">Blog Post</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="breadcumb-shape">
+            <img src="~/assets/images/inner-img/breadcumb-dot.png" alt="dot">
+        </div>
+    </div>
+</div>
+<!--==================================================-->
+<!-- End roadly Breadcumb Area -->
+<!--==================================================-->
+<!--==================================================-->
+<!-- Start roadly Blog Area -->
+<!--==================================================-->
+@if (ViewBag.lstBlogManagement != null && (ViewBag.lstBlogManagement as List<FabulousWorkplaceWebsite.Models.BlogManagement>).Count > 0)
+{
+    <section class="blog_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center">
+                        <h4>recent post</h4>
+                        <h1>Read our Blogs</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                @foreach (var item in ViewBag.lstBlogManagement as List<FabulousWorkplaceWebsite.Models.BlogManagement>)
+                {
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="single-blog-box">
+                            <div class="single-blog-thumb">
+                                <img src="@item.ImagePath1" alt="thumb">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-title">
+                                    <h3><a href="@Url.Action("Blog", "Blogs", new { id = item.Id })">@item.BlogTitle</a></h3>
+                                </div>
+                                <p class="blog-description">
+                                    @item.BlogOneLinerDiscription
+                                </p>
+                                <div class="blog-btn">
+                                    <a href="@Url.Action("Blog", "Blogs", new { id = item.Id })">Read More<i class="flaticon flaticon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+}
+else
+{
+    <section class="blog_area">
+        <div class="container">
+            <div class="row text-center">
+                <h1>Blogs will be published soon</h1>
+            </div>
+        </div>
+    </section>
+}
+<!--==================================================-->
+<!-- End roadly Blog Area -->
+<!--==================================================-->

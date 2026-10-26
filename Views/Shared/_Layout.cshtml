@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        @(string.IsNullOrEmpty(ViewBag.Title)
+        ? "Fabulous Workplace"
+        : ViewBag.Title)
+    </title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="~/assets/images/footer-logo.png">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" type="text/css" media="all">
+    <!-- carousel CSS -->
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css" type="text/css" media="all">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="~/assets/css/animate.css" type="text/css" media="all">
+    <!-- animated-text CSS -->
+    <link rel="stylesheet" href="~/assets/css/animated-text.css" type="text/css" media="all">
+    <!-- font-awesome CSS -->
+    <link rel="stylesheet" href="~/assets/css/all.min.css" type="text/css" media="all">
+    <!-- theme-default CSS -->
+    <link rel="stylesheet" href="~/assets/css/theme-default.css" type="text/css" media="all">
+    <!-- meanmenu CSS -->
+    <link rel="stylesheet" href="~/assets/css/meanmenu.min.css" type="text/css" media="all">
+    <!-- transitions CSS -->
+    <link rel="stylesheet" href="~/assets/css/owl.transitions.css" type="text/css" media="all">
+    <!-- venobox CSS -->
+    <link rel="stylesheet" href="~/venobox/venobox.css" type="text/css" media="all">
+    <!-- flaticon -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap-icons.css" type="text/css" media="all">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="~/assets/css/flaticon.css" type="text/css" media="all">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css" type="text/css" media="all">
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css" type="text/css" media="all">
+    <!-- Coustom Animation CSS -->
+    <link rel="stylesheet" href="~/assets/css/coustom-animation.css" type="text/css" media="all">
+    <!-- odometer CSS -->
+    <link rel="stylesheet" href="~/assets/css/odometer-theme-default.css" type="text/css" media="all">
+
+    <link rel="stylesheet" href="~/assets/css/scroll-up.css" type="text/css" media="all">
+    <!-- modernizr js -->
+    <script src="~/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <meta name="google-site-verification" content="_YOlvwad5aZKJUdofStg0ZjL7rMJJMucG4TFDtwWHS8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE9RTGXGLT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TE9RTGXGLT');
+    </script>
+    @RenderSection("MetaTags", required: false)
+</head>
+<body>
+    <!-- ========= Prealoader ==============-->
+    <div class="loading-screen" id="loading-screen">
+        <span class="bar top-bar"></span>
+        <span class="bar down-bar"></span>
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="F" class="letters-loading">F</span>
+                <span data-text-preloader="a" class="letters-loading">a</span>
+                <span data-text-preloader="b" class="letters-loading">b</span>
+                <span data-text-preloader="u" class="letters-loading">u</span>
+                <span data-text-preloader="l" class="letters-loading">l</span>
+                <span data-text-preloader="o" class="letters-loading">o</span>
+                <span data-text-preloader="u" class="letters-loading">u</span>
+                <span data-text-preloader="s" class="letters-loading">s</span>
+            </div>
+        </div>
+    </div>
+    <!--========= End Prealoader ============== -->
+    <!--==================================================-->
+    <!-- Start roadly Header Area-->
+    <!--==================================================-->
+    @if (TempData["Index"] != null && TempData["Index"].ToString() == "Index")
+    {
+        <div class="roadly-header-area upper" id="sticky-header">
+            <div class="container-fluid">
+                <div class="row header-top">
+                    <div class="col-xxl-6 col-xl-8 col-lg-8">
+                        <div class="header-top-icon-list">
+                            <ul>
+                                <li><a href=" tel:+91 90827 28804"><i class="bi bi-telephone"></i>+91 908-272-8804</a></li>
+                                <li><i class="bi bi-geo-alt"></i>Kalyan East, Maharashtra 421 306</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-4 col-lg-4">
+                        <div class="header-top-social-icon-list">
+                            <ul>
+                                <li class="header-flow-title">Follow Us</li>
+                                <li><a href="https://www.facebook.com/FabulousWorkplace1/"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://x.com/FWorkplace93657"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/fabulousworkplace/"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/fabulous-workplace/"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row header-bottom align-items-center">
+                    <div class="col-lg-2">
+                        <div class="header-logo">
+                            <a class="active_logo" href="@Url.Action("Index", "Index")"><img src="~/assets/images/logo.png" alt="logo"></a>
+                            <a class="logo_two" href="@Url.Action("Index", "Index")"><img src="~/assets/images/logo.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="header-menu">
+                            <ul class="nav_scroll">
+                                <li>
+                                    <a href="@Url.Action("Index", "Index")">Home<span></span></a>
+
+                                </li>
+                                <li><a href="@Url.Action("Aboutus", "Aboutus")">About Us <span></span></a></li>
+                                <li><a href="@Url.Action("Service", "Service")">Service <span></span></a></li>
+                                <li>
+                                    <a href="#">Pages <i class="bi bi-chevron-down"></i><span></span></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="@Url.Action("Pricing", "Pricing")">Pricing Plan</a></li>
+                                        <li><a href="@Url.Action("PrivacyPolicy", "PrivacyPolicy")">Privacy & Policy</a></li>
+                                        <li><a href="@Url.Action("Faq", "Faq")">FAQ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Blogs", "Blogs")">Blog<span></span></a>
+                                </li>
+                                <li><a href="@Url.Action("Contact", "Contact")">Contact</a></li>
+                            </ul>
+                            <div class="header_right">
+                                <div class="header-button roadly_btn">
+                                    <a href="@Url.Action("Contact", "Contact")">Get In Touch<i class="bi bi-arrow-right"></i> <span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="roadly-header-area inner-style" id="sticky-header">
+            <div class="container-fluid">
+                <div class="row header-top">
+                    <div class="col-xxl-6 col-xl-8 col-lg-8">
+                        <div class="header-top-icon-list">
+                            <ul>
+                                <li><a href=" tel:+91 90827 28804"><i class="bi bi-telephone"></i>+91 908-272-8804</a></li>
+                                <li><i class="bi bi-geo-alt"></i>Thane West, Maharashtra 400604</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-4 col-lg-4">
+                        <div class="header-top-social-icon-list">
+                            <ul>
+                                <li class="header-flow-title">Follow Us</li>
+                                <li><a href="https://www.facebook.com/FabulousWorkplace1/"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://x.com/FWorkplace93657"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/fabulousworkplace/"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/fabulous-workplace/"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row header-bottom align-items-center">
+                    <div class="col-lg-2">
+                        <div class="header-logo">
+                            <a class="active_logo" href="@Url.Action("Index", "Index")"><img src="~/assets/images/logo.png" alt="logo"></a>
+                            <a class="logo_two" href="@Url.Action("Index", "Index")"><img src="~/assets/images/logo.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="header-menu">
+                            <ul class="nav_scroll">
+                                <li>
+                                    <a href="@Url.Action("Index", "Index")">Home<span></span></a>
+
+                                </li>
+                                <li><a href="@Url.Action("Aboutus", "Aboutus")">About Us <span></span></a></li>
+                                <li><a href="@Url.Action("Service", "Service")">Service <span></span></a></li>
+                                <li>
+                                    <a href="#">Pages <i class="bi bi-chevron-down"></i><span></span></a>
+                                    <ul class="sub_menu">
+                                        <li><a href="@Url.Action("Pricing", "Pricing")">Pricing Plan</a></li>
+                                        <li><a href="@Url.Action("PrivacyPolicy", "PrivacyPolicy")">Privacy & Policy</a></li>
+                                        <li><a href="@Url.Action("Faq", "Faq")">FAQ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Blogs", "Blogs")">Blog<span></span></a>
+                                </li>
+                                <li><a href="@Url.Action("Contact", "Contact")">Contact</a></li>
+                            </ul>
+                            <div class="header_right">
+                                <div class="header-button roadly_btn">
+                                    <a href="@Url.Action("Contact", "Contact")">Get In Touch<i class="bi bi-arrow-right"></i> <span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!--==================================================-->
+    <!-- End roadly Header Area -->
+    <!--==================================================-->
+    <!--========= Start Mobile Memu========== -->
+
+    <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none">
+        <div class="mobile-menu">
+            <nav class="header-menu">
+                <ul class="nav_scroll">
+                    <li>
+                        <a href="@Url.Action("Index", "Index")">Home<span></span></a>
+                    </li>
+                    <li><a href="@Url.Action("Aboutus", "Aboutus")">About Us <span></span></a></li>
+                    <li><a href="@Url.Action("Service", "Service")">Service <span></span></a></li>
+                    <li>
+                        <a href="#">Pages <i class="bi bi-chevron-down"></i><span></span></a>
+                        <ul class="sub_menu">
+                            <li><a href="@Url.Action("Pricing", "Pricing")">Pricing Plan</a></li>
+                            <li><a href="@Url.Action("PrivacyPolicy", "PrivacyPolicy")">Privacy & Policy</a></li>
+                            <li><a href="@Url.Action("Faq", "Faq")">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Blogs", "Blogs")">Blog<span></span></a>
+                    </li>
+                    <li><a href="@Url.Action("Contact", "Contact")">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--========= End Mobile Memu========== -->
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!--==================================================-->
+    <!-- Start roadly Appointment Area -->
+    <!--==================================================-->
+    <section class="appointment_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="section_title">
+                        <h4>need any help</h4>
+                        <h1>Need Certificate</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-right">
+                    <div class="roadly_btn">
+                        <a href="@Url.Action("Contact", "Contact")">Make Appointment <i class="flaticon flaticon-right-arrow"></i><span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==================================================-->
+    <!-- end roadly Appointment Area -->
+    <!--==================================================-->
+    <!--==================================================-->
+    <!-- Start roadly Footer Area -->
+    <!--==================================================-->
+    <section class="footer_area boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="footer-widget-contact">
+                        <div class="footer_logo">
+                            <a href="@Url.Action("Index", "Index")"><img src="~/assets/images/footer-logo.png" alt="footer-logo"></a>
+                        </div>
+                        <p class="footer_desc">
+                            Evolve professional workplace excellence through trusted certification, people-first standards, and culture-driven recognition designed to build credible, high-performing organizations.
+                        </p>
+                        <div class="footer_social_icon">
+                            <a href="https://www.facebook.com/FabulousWorkplace1/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/FWorkplace93657"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/fabulousworkplace/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/fabulous-workplace/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-6">
+                    <div class="footer-widget-content">
+                        <div class="footer-widget-title">
+                            <h4>Our Services</h4>
+                        </div>
+                        <div class="footer-widget-menu">
+                            <ul>
+                                <li><a href="@Url.Action("Aboutus", "Aboutus")"><i class="bi bi-chevron-double-right"></i> About Company</a></li>
+                                <li><a href="@Url.Action("Service", "Service")"><i class="bi bi-chevron-double-right"></i> Services</a></li>
+                                <li><a href="@Url.Action("PrivacyPolicy", "PrivacyPolicy")"><i class="bi bi-chevron-double-right"></i> Privacy & Policy</a></li>
+                                <li><a href="@Url.Action("Faq", "Faq")"><i class="bi bi-chevron-double-right"></i> FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="footer-widget-content">
+                      
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="footer-widget-title">
+                        <h4>Contact Info</h4>
+                    </div>
+                    <div class="footer_from">
+                        <p class="footer_desc2">
+                            Sainath building Office no 9, 3rd floor, kolsewadi Katemanivali, Kalyan East, Maharashtra 421 306.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row add-border align-items-center">
+                <div class="col-md-12">
+                    <div class="footer-bottom-content">
+                        <div class="footer-bottom-content-copy">
+                            <p>
+                                Copyright ©
+                                <script>
+                                    var CurrentYear = new Date().getFullYear()
+                                    document.write(CurrentYear)</script> <b style="color: #faa61a">Fabulous Workplace</b>. All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-shape">
+                <img src="~/assets/images/home_one/footer-shape.png" alt="shape">
+                <img src="~/assets/images/home_one/footer-shape2.png" alt="shape">
+                <img src="~/assets/images/home_one/footer-shape3.png" alt="shape">
+                <img src="~/assets/images/home_one/footer-shape4.png" alt="shape">
+                <img src="~/assets/images/home_one/footer-shape5.png" alt="shape">
+                <img src="~/assets/images/home_one/footer-shape6.png" alt="shape">
+            </div>
+        </div>
+    </section>
+    <!--==================================================-->
+    <!-- End roadly Footer Area-->
+    <!--==================================================-->
+    <!--==================================================-->
+    <!-- Start roadly Scroll Up-->
+    <!--==================================================-->
+    <div class="prgoress_indicator active-progress">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 212.78;"></path>
+        </svg>
+    </div>
+    <!--==================================================-->
+    <!-- End roadly Scroll Up-->
+    <!--==================================================-->
+    <!-- jquery js -->
+    <script src="~/assets/js/vendor/jquery-3.6.2.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- carousel js -->
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <!-- counterup js -->
+    <script src="~/assets/js/jquery.counterup.min.js"></script>
+    <!-- waypoints js -->
+    <script src="~/assets/js/waypoints.min.js"></script>
+    <!-- wow js -->
+    <script src="~/assets/js/wow.js"></script>
+    <!-- imagesloaded js -->
+    <script src="~/assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- venobox js -->
+    <script src="~/venobox/venobox.js"></script>
+    <!--  animated-text js -->
+    <script src="~/assets/js/animated-text.js"></script>
+    <!-- venobox min js -->
+    <script src="~/venobox/venobox.min.js"></script>
+    <!-- isotope js -->
+    <script src="~/assets/js/isotope.pkgd.min.js"></script>
+    <!-- jquery meanmenu js -->
+    <script src="~/assets/js/jquery.meanmenu.js"></script>
+    <!-- jquery scrollup js -->
+    <script src="~/assets/js/jquery.scrollUp.js"></script>
+    <!-- barfiller -->
+    <script src="~/assets/js/jquery.barfiller.js"></script>
+    <!-- theme js -->
+    <script src="~/assets/js/theme.js"></script>
+</body>
+</html>

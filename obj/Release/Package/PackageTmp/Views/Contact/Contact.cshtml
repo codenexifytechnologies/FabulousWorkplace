@@ -1,0 +1,202 @@
+﻿@model FabulousWorkplaceWebsite.Models.Contact
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["Message"] != null)
+{
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            toastr.info('@TempData["Message"]');
+        });
+    </script>
+}
+
+
+<div class="breadcumb-area d-flex style_two">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="breadcumb-content">
+                    <div class="breadcumb-title">
+                        <h4>Contact Us</h4>
+                    </div>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Index")">Home <span>/</span></a></li>
+                        <li class="breadcumb-intext">Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="breadcumb-shape">
+            <img src="~/assets/images/inner-img/breadcumb-dot.png" alt="dot">
+        </div>
+    </div>
+</div>
+
+<div class="contact-address-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-contact-box">
+                    <div class="contact-address-icon">
+                        <img src="~/assets/images/inner-img/contact-icon1.png" alt="icon">
+                    </div>
+                    <div class="contact-box-content">
+                        <div class="contact-box-title">
+                            <h2>Call Support Center 24/7</h2>
+                        </div>
+                        <div class="contact-box-info">
+                            <p>+91 908-272-8804</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-contact-box">
+                    <div class="contact-address-icon">
+                        <img src="~/assets/images/inner-img/contact-icon2.png" alt="icon">
+                    </div>
+                    <div class="contact-box-content">
+                        <div class="contact-box-title">
+                            <h2>write to us</h2>
+                        </div>
+                        <div class="contact-box-info">
+                            <p>
+                                fabulousworkplace@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-contact-box">
+                    <div class="contact-address-icon">
+                        <img src="~/assets/images/inner-img/contact-icon3.png" alt="icon">
+                    </div>
+                    <div class="contact-box-content">
+                        <div class="contact-box-title">
+                            <h2>visit us</h2>
+                        </div>
+                        <div class="contact-box-info">
+                            <p>
+                                Sainath building Office no 9, 3rd floor, <span>
+                                    kolsewadi Katemanivali,
+                                    Kalyan East,
+                                </span><span> Maharashtra 421 306.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                @using (Html.BeginForm("Contact", "Contact", FormMethod.Post, new { @class = "", onsubmit = "return showLoaderIfValid(this)" }))
+                {
+                    <div class="contact-input-box">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form_box">
+                                    @Html.TextBoxFor(m => m.Name, new { @autocomplete = "off", required = "required", placeholder = "Name" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form_box">
+                                    @Html.TextBoxFor(m => m.Email, new { @autocomplete = "off", required = "required", placeholder = "Your Email" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form_box">
+                                    @Html.TextBoxFor(m => m.Mobile, new
+                                    {
+                                        @autocomplete = "off",
+                                        @required = "required",
+                                        @placeholder = "Your Mobile",
+                                        @maxlength = "10",
+                                        @minlength = "10",
+                                        @type = "tel",
+                                        @pattern = "[0-9]{10}",
+                                        @oninput = "this.value=this.value.replace(/[^0-9]/g,'')"
+ })
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form_box">
+                                    @Html.TextBoxFor(m => m.Subject, new { @autocomplete = "off", required = "required", placeholder = "Your Subject" })
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form_box">
+                                    @Html.TextAreaFor(m => m.Message, new { @autocomplete = "off", required = "required", placeholder = "Message", cols = "10", rows = "10" })
+                                </div>
+                                <div class="submit_button">
+                                    <button type="submit">Submit Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-4">
+                <div class="contact-autor-info">
+                    <div class="contact-info-thumb">
+                        <img src="~/assets/images/inner-img/contact-thumb.png" alt="thumb">
+                    </div>
+                    <div class="contact-info-social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/FabulousWorkplace1/"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://x.com/FWorkplace93657"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/fabulousworkplace/"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/fabulous-workplace/"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                        <div class="contact-social-title">
+                            <h3>Follow Us</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="google-map">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <iframe src="https://www.google.com/maps?q=Sainath%20building%20Office%20no%209,%203rd%20floor,%20Kolsewadi%20Katemanivali,%20Kalyan%20East,%20Maharashtra%20421306&hl=en&z=17&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    function showLoaderIfValidReg(form) {
+        var $form = $(form);
+
+        if (!$form.valid()) {
+            return false;
+        }
+
+        document.getElementById("loading-screen").style.display = "flex";
+
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+            btn.innerText = "Please wait...";
+        }
+        return true;
+    }
+</script>
